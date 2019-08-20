@@ -49,14 +49,13 @@ class GroupController extends Controller
             return redirect()->back()->withInput();
         };
 
-        $memberIDs = $request->input('memberID');
-
-        $array = [];
-        foreach ($memberNames as $key => $member) {
-            $array += [$member => $memberIDs[$key]];
+        $members=[];
+        $memberNum=2;
+        foreach($memberNames as $name){
+            $members+=["Member ".$memberNum++ => $name];
         }
 
-        Group::create($attributes + ['status' => 'new', 'groupMembersJson' => json_encode($array)]);
+        Group::create($attributes + ['status' => 'new', 'groupMembersJson' => json_encode($members)]);
         \Session::flash('message', 'تم الإرسال بنجاح!');
         return view('done');
 
