@@ -45,7 +45,7 @@ class GroupController extends Controller
 
         $membersCount = count($memberNames);
 
-        if ($membersCount < 2 || $membersCount > 5) {
+        if ($membersCount < 1 || $membersCount > 3) {
             return redirect()->back()->withInput();
         };
 

@@ -46,14 +46,6 @@
 
                             </div>
                             
-                            <h4 class="page-header">عضو 3</h4>
-
-                            <div class="form-group float-label-control">
-                                <label for=""></label>
-                                <input type="name" class="form-control"  name="memberName[]" placeholder="الاسم" required>
-
-                            </div>
-
                         </div>
 
                     <div class="form-group">
@@ -104,21 +96,21 @@
     @include('layouts.masterJS')
     <script src="./js/singularForm.js"></script>
     <script>
-    var number = 4;
+    var number = 2;
     $( "#add" ).click(function() {
-        if(number>5){
-            alert('عدد أعضاء المجموعة مع قائدهم لا يُمكن أن يزيد عن 5');
+        if(number>3){
+            alert('عدد أعضاء المجموعة مع قائدهم لا يُمكن أن يزيد عن 4');
         }else{
-    var newElement = '<div id="member'+number+'"><button type="button" onClick="a('+number+')" class="close" aria-label="Close"><span aria-hidden="true" style="color:red;">إزالة</span></button><h4 class="page-header">عضو '+number+'</h4><div class="form-group float-label-control"><label for="">الاسم</label><input type="name"  name="memberName[]" class="form-control" placeholder="الاسم" required></div></div>';
+    var newElement = '<div id="member'+(number+1)+'"><button type="button" onClick="a('+(number+1)+')" class="close" aria-label="Close"><span aria-hidden="true" style="color:red;">إزالة</span></button><h4 class="page-header">عضو '+(number+1)+'</h4><div class="form-group float-label-control"><label for="">الاسم</label><input type="name"  name="memberName[]" class="form-control" placeholder="الاسم" required></div></div>';
     $( "#members" ).append( $(newElement) );
-    number++;
+        number++;
         }
 
     });
     
     function a(a){
-        if(number<4){
-                        alert('عدد أعضاء المجموعة لا يُمكن أن يقل عن 3');
+        if(number<3){
+            alert('عدد أعضاء المجموعة لا يُمكن أن يقل عن 2');
         }else{
 
         $('#member'+a).remove();
