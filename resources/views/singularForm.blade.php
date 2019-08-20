@@ -30,10 +30,6 @@
                             <label for=""></label>
                             <input type="email" class="form-control" name="email"  placeholder="البريد الإلكتروني" required>
                         </div>
-                          <div class="form-group float-label-control">
-                            <label for=""></label>
-                            <input type="name" class="form-control" name="uniID" placeholder="الرقم الجامعي (اختياري)">
-                        </div>
                         <div class="form-group float-label-control">
                             <label for=""></label>
                             <input type="name" class="form-control" name="major" placeholder="التخصص" required>
