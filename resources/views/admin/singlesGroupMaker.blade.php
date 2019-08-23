@@ -12,10 +12,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Traits</th>
-                                <th>Skills</th>
                                 <th>Email</th>
-                                <th>Uni ID</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -24,13 +21,9 @@
                             <tr style="display:none;" id="{{$single->id}}in">
                                 <td>{{$single->id}}</td>
                                 <td>{{$single->name}}</td>
-                                <td>{{$single->traits}}</td>
-                                <td> <a href="#" data-toggle="tooltip" title="{{$single->skills}}">View Skills</a> </td>
                                 <td>{{$single->email}}</td>
-                                <td>{{$single->uniID}}</td>
                                 <td><span class="text-success">accepted</span></td>
                                 <td><button onclick="removeFromGroup('{{$single->id}}')" class="btn btn-danger">Remove From Group</button>
-                                {{-- <td class="@if($single->status === 'rejected') text-danger  @elseif($single->status === 'accepted') text-success @endif">{{$single->status}}</td> --}}
                             </tr>
                             @endforeach
                         </tbody>
@@ -48,10 +41,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Traits</th>
-                                <th>Skills</th>
                                 <th>Email</th>
-                                <th>Uni ID</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -60,10 +50,7 @@
                             <tr id="{{$single->id}}out">
                                 <td>{{$single->id}}</td>
                                 <td>{{$single->name}}</td>
-                                <td>{{$single->traits}}</td>
-                                <td> <a href="#" data-toggle="tooltip" title="{{$single->skills}}">View Skills</a> </td>
                                 <td>{{$single->email}}</td>
-                                <td>{{$single->uniID}}</td>
                                 <td class="@if($single->status === 'rejected') text-danger  @elseif($single->status === 'accepted') text-success @endif">{{$single->status}}</td>
                                 <td><button onclick="addToGroup({{$single->id}})" class="btn btn-success">Add To Group</button>
                             </tr>
@@ -103,13 +90,13 @@
             acceptedMemberIDs[j++]=table.rows[i].cells[0].innerHTML;
         }
 
-       if(acceptedMemberIDs.length<3){
-           alert("Must add 3 members at least");
+       if(acceptedMemberIDs.length<2){
+           alert("Must add 2 members at least");
            return;
        }
 
-       if(acceptedMemberIDs.length>5){
-           alert("maximum is 5 members");
+       if(acceptedMemberIDs.length>4){
+           alert("maximum is 4 members");
            return;
        }
 

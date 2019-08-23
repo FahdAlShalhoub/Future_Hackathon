@@ -28,7 +28,7 @@ Auth::routes();
 Route::get('/backend', 'HomeController@index')->name('home');
 Route::get('/Singles','HomeController@pullSingles')->name('pullSingles');
 Route::get('/pullgroupsOfsingles','HomeController@pullGroupsOfSingles')->name('pullGroupsOfSingles');
-Route::get('/SinglesGroupMaker/{track}','HomeController@showSinglesGroupMaker')->name('makeSinglesGroup');
+Route::get('/SinglesGroupMaker','HomeController@showSinglesGroupMaker')->name('makeSinglesGroup');
 Route::get('/makeGroup/{memberIDs}','HomeController@makeGroup')->name('makeGroup');
 Route::get('/pullgroups/{status}', 'HomeController@fetch')->name('pullGroups');
 Route::get('/showGroup/{id}','HomeController@show')->name('showGroup');
