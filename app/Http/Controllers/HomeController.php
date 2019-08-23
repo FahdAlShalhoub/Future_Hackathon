@@ -43,11 +43,9 @@ class HomeController extends Controller
         return view('admin.groupsOfSinglesAdministration',['members'=>$members,'groupCount'=>$groupCount]);
     }
 
-    public function showSinglesGroupMaker($track)
+    public function showSinglesGroupMaker()
     {
-        $singles=Single::where('track',$track)->where(function($query){
-            $query->where('status','new')->orWhere('status','rejected');
-        })->get(); 
+        $singles=Single::where('status','new')->orWhere('status','rejected')->get(); 
         
         return view('admin.singlesGroupMaker',['singles'=>$singles]);
     }
@@ -55,7 +53,7 @@ class HomeController extends Controller
     public function makeGroup($memberIDs)
     {
         $memberIDs=Json_decode($memberIDs);
-        if(count($memberIDs)<3 || count($memberIDs)>5 )
+        if(count($memberIDs)<2 || count($memberIDs)>4 )
         {
             return "Invalid amount of members";
         }
