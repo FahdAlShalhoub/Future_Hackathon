@@ -20,15 +20,15 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>Member Number</th>
                                 <th>Member Name</th>
-                                <th>Member UNI ID</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($group->members() as $memberName=>$memberID)
+                            @foreach($group->members() as $memberNumber=>$memberName)
                             <tr>
+                                <td>{{$memberNumber}}</td>
                                 <td>{{$memberName}}</td>
-                                <td>{{$memberID}}</td>
                             </tr>
                             @endforeach
 

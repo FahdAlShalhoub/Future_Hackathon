@@ -52,7 +52,7 @@ class GroupController extends Controller
         $members=[];
         $memberNum=2;
         foreach($memberNames as $name){
-            $members+=["Member ".$memberNum++ => $name];
+            $members+=[$memberNum++ => $name];
         }
 
         Group::create($attributes + ['status' => 'new', 'groupMembersJson' => json_encode($members)]);
@@ -61,48 +61,4 @@ class GroupController extends Controller
 
     }
 
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  \App\Group  $group
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function show(Group $group)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  \App\Group  $group
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function edit(Group $group)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @param  \App\Group  $group
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function update(Request $request, Group $group)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Remove the specified resource from storage.
-    //  *
-    //  * @param  \App\Group  $group
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function destroy(Group $group)
-    // {
-    //     //
-    // }
 }

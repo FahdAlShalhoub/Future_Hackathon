@@ -29,7 +29,6 @@
                                <th>Group ID</th>
                                <th>Group Name</th>
                                <th>Group Status</th>
-                               <th>Group Track</th>
                            </tr>
                        </thead>
                        <tbody>
@@ -38,7 +37,6 @@
                                 <td>{{$group->id}}</td>
                                 <td>{{$group->groupName}}</td>
                                 <td class="@if($group->status === 'rejected') text-danger  @elseif($group->status === 'accepted') text-success @endif">{{$group->status}}</td>
-                                <td>{{$group->track}}</td>
                                 <td><a class="btn btn-primary" href="{{route('showGroup',$group->id)}}">View Group</a></td>
                            </tr>
                            @endforeach
