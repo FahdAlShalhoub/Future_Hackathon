@@ -12,20 +12,20 @@
 <header>
     <div class="header-content">
         <div class="header-content-inner text-center">  
-            <img class="img-responsive" src="img/WinniePooh.jpg">
+            <img class="img-responsive" src="img/FHnoBg.png">
             <hr>
             <div class="container-fluid">
                 <div class="row">
-                    <h2 class="col-lg-6 col-lg-offset-1 text-primary" id="eventStartHeader">بدأ الفعالية</h2>
-                    <h2 class="col-lg-4 text-primary" id="eventStartCountDown"></h2> 
+                    <h2 class="col-lg-6 " id="eventStartHeader">بدأ الفعالية</h2>
+                    <h2 class="col-lg-6" id="eventStartCountDown"></h2> 
                 </div>
                 <div class="row">
-                    <h2 class="col-lg-6 col-lg-offset-1 text-primary" id="registrationDeadlineHeader">نهاية التسجيل</h2>
-                    <h2 class="col-lg-4 text-primary" id="registrationDeadLine"></h2>
+                    <h2 class="col-lg-6" id="registrationDeadlineHeader">نهاية التسجيل</h2>
+                    <h2 class="col-lg-6" id="registrationDeadLine"></h2>
                 </div>
             </div>
         </div>
-        <a href="#about" class="btn btn-primary btn-lg page-scroll">تعرف على الفعالية</a>
+        <a href="#about" class="btn btn-default btn-lg page-scroll">تعرف على الفعالية</a>
     </div>
 </header>
 

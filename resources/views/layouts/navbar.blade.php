@@ -1,10 +1,10 @@
 <nav id="mainNav" class="navbar navbar-fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/"> <img class="img-responsive studentxlogo" src="img/WinniePooh.jpg"></a>
+        <a class="navbar-brand"  href="/"> <img class="img-responsive studentxlogo" src="img/FHheader.png"></a>
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                 data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">التنقل</span> القائمة <i class="fa fa-bars"></i>
+                <span class="sr-only">التنقل</span><i class="fa fa-bars"></i>
             </button>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
