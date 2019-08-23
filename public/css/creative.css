@@ -157,7 +157,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/WinniePoohBg.jpg');
+  background-image: url('../img/th.jpg');
   text-align: center;
   color: white;
 }
@@ -291,8 +291,8 @@ header .header-content .header-content-inner p {
 }
 .btn-default {
   color: #222222;
-  background-color: rgb(41, 4, 252);
-  border-color: rgb(41, 4, 252);
+  background-color: rgb(247, 246, 252);
+  border-color: rgb(252, 251, 253);
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
@@ -303,9 +303,9 @@ header .header-content .header-content-inner p {
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #222222;
-  background-color: #f2f2f2;
-  border-color: #ededed;
+  color: white;
+  background-color: #3183ff;
+  border-color: #3183ff;
 }
 .btn-default:active,
 .btn-default.active,
