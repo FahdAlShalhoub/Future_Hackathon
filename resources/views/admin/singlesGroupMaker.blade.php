@@ -101,7 +101,14 @@
        }
 
        acceptedMemberIDs=JSON.stringify(acceptedMemberIDs);
-       window.location.assign('/makeGroup/'+acceptedMemberIDs);
+       const http=new XMLHttpRequest();
+       http.open('GET','/makeGroup/'+acceptedMemberIDs);
+       http.send();
+       http.onreadystatechange=function(){
+           if(this.readyState==4,this.status=200){
+               window.location.assign('/pullgroupsOfsingles');
+           }
+       }
     }
     $(document).ready(function(){
      $('[data-toggle="tooltip"]').tooltip();   
