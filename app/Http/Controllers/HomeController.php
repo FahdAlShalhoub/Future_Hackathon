@@ -38,9 +38,8 @@ class HomeController extends Controller
 
     public function pullGroupsOfSingles()
     {
-        $members=Single::whereNotNull('groupId')->get();
-        $groupCount=count(GroupsOfSingles::all());
-        return view('admin.groupsOfSinglesAdministration',['members'=>$members,'groupCount'=>$groupCount]);
+        $members=Single::whereNotNull('groupID')->get()->groupBy('groupID');
+        return view('admin.groupsOfSinglesAdministration',['members'=>$members]);
     }
 
     public function showSinglesGroupMaker()

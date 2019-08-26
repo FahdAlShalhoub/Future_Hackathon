@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    @for($i=0;$i<$groupCount;$i++)
+    @foreach($members as $groupID => $groupMembers)
     <div class="row justify-content-center mt-5">
         <div class="col-12">
             <div class="card">
@@ -11,23 +11,21 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Group ID</th>
                                 <th>Name</th>
-                                <th>Traits</th>
-                                <th>Email</th>
-                                <th>Uni ID</th>
+                                <th>Email</th> 
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($members as $member)
-                            <tr>
-                                <td>{{$member->id}}</td>
-                                <td>{{$member->name}}</td>
-                                <td>{{$member->traits}}</td>
-                                <td>{{$member->email}}</td>
-                                <td>{{$member->uniID}}</td>
-                                 <td class="@if($member->status === 'rejected') text-danger  @elseif($member->status === 'accepted') text-success @endif">{{$member->status}}</td>
-                            </tr>
+                            @foreach($groupMembers as $member)
+                                <tr>
+                                    <td>{{$member->id}}</td>
+                                    <td>{{$member->groupID}}</td>
+                                    <td>{{$member->name}}</td>
+                                    <td>{{$member->email}}</td>
+                                    <td class="@if($member->status === 'rejected') text-danger  @elseif($member->status === 'accepted') text-success @endif">{{$member->status}}</td>
+                                </tr> 
                             @endforeach
                         </tbody>
                     </table>
@@ -35,6 +33,6 @@
             </div>
         </div>
     </div>
-    @endfor
+    @endforeach
 </div>
 @endsection
