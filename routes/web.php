@@ -15,13 +15,9 @@ Route::get('/', 'pages@index');
 
 Route::get('/form', 'SingleController@create');
 Route::post('/form', 'SingleController@store');
-
 Route::get('/group', 'GroupController@create');
-
-
 Route::post('/group', 'GroupController@store');
 
-// Route::get('/team', 'pages@viewGroup');
 
 Auth::routes();
 
@@ -34,5 +30,3 @@ Route::get('/pullgroups/{status}', 'HomeController@fetch')->name('pullGroups');
 Route::get('/showGroup/{id}','HomeController@show')->name('showGroup');
 Route::get('/acceptgroup/{id}', 'HomeController@accept')->name('acceptGroup');
 Route::get('/rejectgroup/{id}', 'HomeController@reject')->name('rejectGroup');
-
-// Route::get('/done','pages@done');
