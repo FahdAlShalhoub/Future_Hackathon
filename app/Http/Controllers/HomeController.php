@@ -49,6 +49,28 @@ class HomeController extends Controller
         return view('admin.singlesGroupMaker',['singles'=>$singles]);
     }
 
+    public function makeRandomGroupsOfSingles()
+    {
+        $singles=Single::whereNull('groupID')->get()->shuffle()->all();
+        $groupOfSingles=[];
+        foreach($singles as $single){
+           if(sizeOf($groupOfSingles)==4){
+               $memberIDs=Json_encode($groupOfSingles);
+               $this->makeGroup($memberIDs);
+               $groupOfSingles=[];
+               array_push($groupOfSingles,$single->id);
+           } else
+            array_push($groupOfSingles,$single->id);
+        }
+        if(sizeOf($groupOfSingles)>1 && sizeOf($groupOfSingles)<5){
+            $memberIDs=Json_encode($groupOfSingles);
+            $this->makeGroup($memberIDs);
+            $groupOfSingles=[];
+        }
+        $members=Single::whereNotNull('groupID')->get()->groupBy('groupID');
+        return redirect(route('pullGroupsOfSingles'));
+    }
+
     public function makeGroup($memberIDs)
     {
         $memberIDs=Json_decode($memberIDs);
@@ -66,8 +88,6 @@ class HomeController extends Controller
                $group->singles()->save($single);
                $group->save();
            }
-
-           return redirect(route('pullSingles'));
         }
     }
 
