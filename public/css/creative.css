@@ -157,7 +157,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/th.jpg');
+  background-image: url('../img/th.jpeg');
   text-align: center;
   color: white;
 }
@@ -339,8 +339,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: white;
-  background-color: rgb(20, 4, 245);
-  border-color: rgb(20, 4, 245);
+  background-color:rgb(51, 37, 245);
+  border-color: rgb(51, 37, 245);
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
@@ -352,8 +352,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #3183ff;
-  border-color: #3183ff;
+  background-color: #0804f0;
+  border-color: #0804f0;
 }
 .btn-primary:active,
 .btn-primary.active,
