@@ -35,16 +35,24 @@ class SingleController extends Controller
      */
     public function store(Request $request)
     {
+        $messsages=[
+            'email.unique' => 'البريد الإلكتروني مسجل مسبقا',
+            'email.email' => 'الرجاء ادخال بريد الكتروني صحيح',
+            'name' => 'الرجاء ادخال الأسم',
+            'major' => 'الرجاء ادخال التخصص',
+            'gender' => 'الرجاء تحديد الجنس'
+        ];
+        
         $attributes = request()->validate([
             'name' => 'required|min:1',
-            'email' => 'required|email|max:255|unique:singles,email',
+            'email' => 'required|email|max:255|unique:singles,email|unique:groups,leadEmail',
             'major' => 'required|min:1',
             'gender' => 'required|min:1',
-        ]);
+        ],$messsages);
 
         Single::create($attributes + ['status' => 'new']);
         \Session::flash('message', 'تم الإرسال بنجاح!');
-        return redirect('/done');
+        return view('done');
 
     }
 
