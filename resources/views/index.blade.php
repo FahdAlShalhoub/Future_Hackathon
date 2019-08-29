@@ -19,10 +19,6 @@
                     <h2 class="col-lg-6 " id="eventStartHeader">بدأ الفعالية</h2>
                     <h2 class="col-lg-6" id="eventStartCountDown"></h2> 
                 </div>
-                <div class="row">
-                    <h2 class="col-lg-6" id="registrationDeadlineHeader">نهاية التسجيل</h2>
-                    <h2 class="col-lg-6" id="registrationDeadLine"></h2>
-                </div>
             </div>
         </div>
         <a href="#about" class="btn btn-default btn-lg page-scroll">تعرف على الفعالية</a>
@@ -35,7 +31,7 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h1 class="section-heading" id="about">هاكاثون المستقبل</h1>
                 <hr class="primary">
-                <h3>    هاكاثون المستقبل هو عبارة عن ملاذ الامة العربية للعودة للحكم العباسي      </h3>
+                <h3>    هاكاثون المستقبل        </h3>
 
                 <ul class="text-right list-unstyled listP">
                         <h3 class="text-600">المسابقة راح تكون كالتالي:</h3>
