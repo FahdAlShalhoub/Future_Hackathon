@@ -28,5 +28,6 @@ Route::get('/SinglesGroupMaker','HomeController@showSinglesGroupMaker')->name('m
 Route::get('/makeGroup/{memberIDs}','HomeController@makeGroup')->name('makeGroup');
 Route::get('/pullgroups/{status}', 'HomeController@fetch')->name('pullGroups');
 Route::get('/showGroup/{id}','HomeController@show')->name('showGroup');
-Route::get('/acceptgroup/{id}', 'HomeController@accept')->name('acceptGroup');
-Route::get('/rejectgroup/{id}', 'HomeController@reject')->name('rejectGroup');
+Route::patch('/RandomizeSingles','HomeController@makeRandomGroupsOfSingles')->name('makeRandomSinglesGroups');
+Route::patch('/acceptgroup/{id}', 'HomeController@accept')->name('acceptGroup');
+Route::patch('/rejectgroup/{id}', 'HomeController@reject')->name('rejectGroup');

@@ -26,7 +26,11 @@
                    </table>
                 </div>
                 <div class="card-footer text-center">
-                    <a class="btn btn-primary col-6" href={{route('makeSinglesGroup')}}>Make Group</a>
+                    <a class="btn btn-primary col-4" href={{route('makeSinglesGroup')}}>Make a Group Manualy</a>
+                    <form method="POST" action={{route('makeRandomSinglesGroups')}}>
+                        @method('patch') @csrf
+                        <button type="submit" class="btn btn-warning col-4">Make Groups Automatically</button>
+                    </form>
                 </div>
             </div>
         </div>

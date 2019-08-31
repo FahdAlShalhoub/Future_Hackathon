@@ -40,27 +40,19 @@
     </div>
 
     <div class="row justify-content-center mt-3">
-        @if($group->status !='accepted')<a class="btn btn-success col-3 mr-1" href={{route('acceptGroup', $group->id)}}>Accept Group</a>@endif
-        @if($group->status !='rejected')<a class="btn btn-danger col-3"  href={{route('rejectGroup', $group->id)}}>Reject Group</a>@endif
+        @if($group->status !='accepted')
+        <form method="POST" action={{route('acceptGroup', $group->id)}}>
+            @method('patch') @csrf
+            <button type="submit" class="btn btn-success btn-md mr-1">Accept Group</button>
+        </form>
+        @endif
+        @if($group->status !='rejected')
+        <form method="POST" action={{route('rejectGroup', $group->id)}}>
+            @method('patch') @csrf
+            <button type="submit" class="btn btn-danger btn-md" >Reject Group</button>
+        </form>
+        @endif
     </div>
 </div>
 
-    @endsection
-
-    @section('specialJS')
-    <script>
-    // function rejectGroup()
-    // {
-    //     var xhttp = new XMLHttpRequest();
-    //     xhttp.open('GET',''+'?id='+{{$group->id}},false);
-    //     xhttp.send(); 
-    // }
-
-    // function acceptGroup()
-    // {
-    //     var xhttp = new XMLHttpRequest();
-    //     xhttp.open('GET','',id='+{{$group->id}},false);
-    //     xhttp.send(); 
-    // }
-    </script>
-    @endsection
+@endsection
