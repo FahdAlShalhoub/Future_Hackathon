@@ -25,6 +25,12 @@
                                     <td>{{$member->name}}</td>
                                     <td>{{$member->email}}</td>
                                     <td class="@if($member->status === 'rejected') text-danger  @elseif($member->status === 'accepted') text-success @endif">{{$member->status}}</td>
+                                    <td>
+                                        <form method="POST" action="{{route('rejectSingle', $member->id)}}">
+                                            @csrf @method('patch')
+                                            <button class="btn btn-danger" type="submit">Reject</button>
+                                         </form>
+                                    </td>
                                 </tr> 
                             @endforeach
                         </tbody>

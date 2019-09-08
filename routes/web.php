@@ -31,3 +31,4 @@ Route::get('/showGroup/{id}','HomeController@show')->name('showGroup');
 Route::patch('/RandomizeSingles','HomeController@makeRandomGroupsOfSingles')->name('makeRandomSinglesGroups');
 Route::patch('/acceptgroup/{id}', 'HomeController@accept')->name('acceptGroup');
 Route::patch('/rejectgroup/{id}', 'HomeController@reject')->name('rejectGroup');
+Route::patch('/rejectSingle/{single}', 'HomeController@rejectSingle')->name('rejectSingle');

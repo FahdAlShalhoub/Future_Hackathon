@@ -13,6 +13,7 @@ class Single extends Model
         'status',
         'uniID',
         'email',
+        'groupID',
         'status'
     ];
 

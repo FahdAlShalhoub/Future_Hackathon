@@ -120,4 +120,10 @@ class HomeController extends Controller
         $rejectedGroup->save();
         return redirect('pullgroups/'.$previousStatus);
     }
+
+    public function rejectSingle(Single $single)
+    {
+        $single->update(['groupID' => null, 'status' => 'rejected']);
+        return redirect(route('pullGroupsOfSingles'));
+    }
 }
