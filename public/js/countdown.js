@@ -1,5 +1,5 @@
  // Set the date we're counting down to
- var eventsStartDate = new Date("August 30, 2019 00:00:00").getTime();
+ var eventsStartDate = new Date("October 3, 2019 00:00:00").getTime();
 //  var registrationDeadline = new Date("August 25, 2019 00:00:00").getTime();
  
  // Update the count down every 1 second
