@@ -13,10 +13,10 @@
 
 Route::get('/', 'pages@index');
 
-Route::get('/form', 'SingleController@create');
-Route::post('/form', 'SingleController@store');
-Route::get('/group', 'GroupController@create');
-Route::post('/group', 'GroupController@store');
+// Route::get('/form', 'SingleController@create');
+// Route::post('/form', 'SingleController@store');
+// Route::get('/group', 'GroupController@create');
+// Route::post('/group', 'GroupController@store');
 
 
 Auth::routes();

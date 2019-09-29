@@ -65,23 +65,7 @@
        
     </div>
 
-    <div class="text-center buttonAnchor">
-        <a href="#reg" class="btn btn-primary btn-lg page-scroll">انتقل للتسجيل</a>
-    </div>
 </section>
-
-<div id="reg">
-    
-<aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <a href="/group" style="margin-bottom: 10px;" class="btn btn-primary btn-lg col-lg-5 sr-button"><i class="fa fa-users"></i> تـسجيل المجموعات</a>
-                <a href="/form" style="margin-bottom: 10px;" class="btn btn-primary btn-lg col-lg-5 col-lg-offset-2 sr-button"> <i class="fa fa-user"></i> تسجيل الأفراد</a>
-            </div>
-        </div>
-</aside>
-</div>
-
 
 
 @include('layouts.masterJS')
