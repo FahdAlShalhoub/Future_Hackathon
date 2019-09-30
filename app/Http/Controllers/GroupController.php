@@ -68,4 +68,15 @@ class GroupController extends Controller
 
     }
 
+    public function confirm(Group $Group, Request $request)
+    {
+        if(! $request->hasValidSignature()){
+            abort(401);
+        }
+
+        $Group->confirmed='yes';
+        $Group->save();
+        return redirect('confirmed');
+    } 
+
 }
