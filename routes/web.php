@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,7 @@ Route::patch('/RandomizeSingles','HomeController@makeRandomGroupsOfSingles')->na
 Route::patch('/acceptgroup/{id}', 'HomeController@accept')->name('acceptGroup');
 Route::patch('/rejectgroup/{id}', 'HomeController@reject')->name('rejectGroup');
 Route::patch('/rejectSingle/{single}', 'HomeController@rejectSingle')->name('rejectSingle');
+
+Route::get('/confirmGroup/{Group}','GroupController@confirm')->name('confirmGroup');
+Route::get('/confirmSingle/{Single}','SingleController@confirm')->name('confirmSingle');
+Route::get('/confirmed','pages@confirmed')->name('confirmed');
