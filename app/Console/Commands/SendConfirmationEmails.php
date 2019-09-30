@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\URL;
 use App\Mail\Confirmation;
 use App\Single;
 use App\Group;
@@ -43,18 +44,18 @@ class SendConfirmationEmails extends Command
     {
         $singles=Single::where('status','accepted')->get();
         $groups=Group::where('status','accepted')->get();
-        $numGroup=0;
+        $numGroups=0;
         $numSingles=0;
         foreach($groups as $group){
-            \Mail::to(['email' => $group->leadEmail])->send(new Confirmation());
-            $numGroup++;
+            \Mail::to(['email' => $group->leadEmail])->send(new Confirmation($group->leadName,URL::signedURL('confirmGroup',['Group' => $group->id])));
+            $numGroups++;
         }
 
         foreach($singles as $single){
-            \Mail::to(['email' => $single->email])->send(new Confirmation());
+            \Mail::to(['email' => $single->email])->send(new Confirmation($single->name,URL::signedRoute('confirmSingle',['Single' => $single->id])));
             $numSingles++;
         }
 
-        $this->info('Sent '.$numSingles.'Confirmation emails to singles and '.$numGroups.'to group leaders');
+        $this->info('Sent '.$numSingles.' Confirmation emails to singles and '.$numGroups.' to group leaders');
     }
 }
