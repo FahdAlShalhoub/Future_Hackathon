@@ -51,7 +51,24 @@ class HomeController extends Controller
 
     public function makeRandomGroupsOfSingles()
     {
-        $singles=Single::whereNull('groupID')->get()->shuffle()->all();
+        $singles=Single::whereNull('groupID')->where(['gender' => 'female'])->get()->shuffle()->all();
+        $groupOfSingles=[];
+        foreach($singles as $single){
+           if(sizeOf($groupOfSingles)==4){
+               $memberIDs=Json_encode($groupOfSingles);
+               $this->makeGroup($memberIDs);
+               $groupOfSingles=[];
+               array_push($groupOfSingles,$single->id);
+           } else
+            array_push($groupOfSingles,$single->id);
+        }
+        if(sizeOf($groupOfSingles)>1 && sizeOf($groupOfSingles)<5){
+            $memberIDs=Json_encode($groupOfSingles);
+            $this->makeGroup($memberIDs);
+            $groupOfSingles=[];
+        }
+
+        $singles=Single::whereNull('groupID')->where(['gender' => 'male'])->get()->shuffle()->all();
         $groupOfSingles=[];
         foreach($singles as $single){
            if(sizeOf($groupOfSingles)==4){
