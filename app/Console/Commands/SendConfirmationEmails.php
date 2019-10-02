@@ -47,15 +47,15 @@ class SendConfirmationEmails extends Command
         $numGroups=0;
         $numSingles=0;
         foreach($groups as $group){
-            \Mail::to(['email' => $group->leadEmail])->send(new Confirmation($group->leadName,URL::signedURL('confirmGroup',['Group' => $group->id])));
+            \Mail::to(['email' => $group->leadEmail])->send(new Confirmation($group,URL::signedRoute('confirmGroup',['Group' => $group->id]),'group'));
             $numGroups++;
         }
 
         foreach($singles as $single){
-            \Mail::to(['email' => $single->email])->send(new Confirmation($single->name,URL::signedRoute('confirmSingle',['Single' => $single->id])));
+            \Mail::to(['email' => $single->email])->send(new Confirmation($single->showGroup(),URL::signedRoute('confirmSingle',['Single' => $single->id]),'single'));
             $numSingles++;
         }
-
+       
         $this->info('Sent '.$numSingles.' Confirmation emails to singles and '.$numGroups.' to group leaders');
     }
 }
