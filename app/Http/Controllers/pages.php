@@ -19,9 +19,4 @@ class pages extends Controller
         return view('done');
     }
 
-    public function confirmed()
-    {
-        return view('email.confirmed');
-    } 
-
 }

@@ -76,7 +76,7 @@ class GroupController extends Controller
 
         $Group->confirmed='yes';
         $Group->save();
-        return redirect('confirmed');
+        return view('email.confirmed');
     } 
 
 }

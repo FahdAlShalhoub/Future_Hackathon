@@ -55,7 +55,7 @@ class SingleController extends Controller
 
         $Single->confirmed='yes';
         $Single->save();
-        return redirect('confirmed');
+        return view('email.confirmed');
     } 
 
 }
