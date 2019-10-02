@@ -31,8 +31,10 @@
   // If the count down is finished, write some text 
    if (distance1 < 0) {
     //clearInterval(x);
-     document.getElementById("eventStartHeader").innerHTML = "بدأت الفعالية!!<br> تابعها  <a href='google.com'>هنا</a>";
-     
+     var elm = document.getElementById("eventStartHeader");
+     elm.innerHTML = "بدأت الفعالية!!";
+     elm.classList.remove('col-lg-6');
+     elm.classList.add('col-lg-12');
      document.getElementById("eventStartCountDown").innerHTML = "";
    }
   //  if (distance2< 0) {
