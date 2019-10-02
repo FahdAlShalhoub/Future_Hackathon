@@ -36,4 +36,3 @@ Route::patch('/rejectSingle/{single}', 'HomeController@rejectSingle')->name('rej
 
 Route::get('/confirmGroup/{Group}','GroupController@confirm')->name('confirmGroup');
 Route::get('/confirmSingle/{Single}','SingleController@confirm')->name('confirmSingle');
-Route::get('/confirmed','pages@confirmed')->name('confirmed');
