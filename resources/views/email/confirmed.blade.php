@@ -9,7 +9,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner text-center">  
-                <img class="img-responsive" src="img/FHnoBgWhite.png">
+                <img class="img-responsive" src="/img/FHnoBgWhite.png">
                 <hr>
                 <div class="container-fluid">
                     <div class="row">
