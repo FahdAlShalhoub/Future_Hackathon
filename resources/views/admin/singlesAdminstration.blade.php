@@ -12,6 +12,7 @@
                                <th>ID</th>
                                <th>Name</th>
                                <th>Status</th>
+                               <th>Confirmed</th>
                            </tr>
                        </thead>
                        <tbody>
@@ -20,6 +21,7 @@
                                 <td>{{$single->id}}</td>
                                 <td>{{$single->name}}</td>
                                 <td class="@if($single->status === 'rejected') text-danger  @elseif($single->status === 'accepted') text-success @endif">{{$single->status}}</td>
+                                <td class="@if($single->confirmed == 'yes') text-success @else text-danger @endif">{{$single->confirmed}}</td>
                            </tr>
                            @endforeach
                        </tbody>

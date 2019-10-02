@@ -15,6 +15,7 @@
                                 <th>Name</th>
                                 <th>Email</th> 
                                 <th>Status</th>
+                                <th>Confirmed</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -25,6 +26,7 @@
                                     <td>{{$member->name}}</td>
                                     <td>{{$member->email}}</td>
                                     <td class="@if($member->status === 'rejected') text-danger  @elseif($member->status === 'accepted') text-success @endif">{{$member->status}}</td>
+                                    <td class="@if($member->confirmed == 'yes') text-success @else text-danger @endif">{{$member->confirmed}}</td>
                                     <td>
                                         <form method="POST" action="{{route('rejectSingle', $member->id)}}">
                                             @csrf @method('patch')
