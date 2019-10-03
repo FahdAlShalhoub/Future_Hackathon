@@ -30,6 +30,7 @@
                                <th>Group Name</th>
                                <th>Group Status</th>
                                <th>Confirmed</th>
+                               <th>Attended</th>
                            </tr>
                        </thead>
                        <tbody>
@@ -37,9 +38,12 @@
                            <tr>
                                 <td>{{$group->id}}</td>
                                 <td>{{$group->groupName}}</td>
+        
                                 <td class="@if($group->status === 'rejected') text-danger  @elseif($group->status === 'accepted') text-success @endif">{{$group->status}}</td>
                                 <td class="@if($group->confirmed == 'yes') text-success @else text-danger @endif">{{$group->confirmed}}</td>
-
+                                <td class="@if($group->attended === 'yes') text-success @endif">{{$group->attended}}</td>
+                                <td><a class="btn btn-success" href='{{route('attendedGroup',$group->id)}}'>Attended</a></td>
+                                <td><a class="btn btn-danger" href='{{route('absentGroup',$group->id)}}'>Left</a>
                                 <td><a class="btn btn-primary" href="{{route('showGroup',$group->id)}}">View Group</a></td>
                            </tr>
                            @endforeach

@@ -33,6 +33,13 @@ Route::patch('/RandomizeSingles','HomeController@makeRandomGroupsOfSingles')->na
 Route::patch('/acceptgroup/{id}', 'HomeController@accept')->name('acceptGroup');
 Route::patch('/rejectgroup/{id}', 'HomeController@reject')->name('rejectGroup');
 Route::patch('/rejectSingle/{single}', 'HomeController@rejectSingle')->name('rejectSingle');
-
+Route::get('/attendedGroup/{group}','HomeController@attendedGroup')->name('attendedGroup');
+Route::get('/attendedSingle/{single}','HomeController@attendedSingle')->name('attendedSingle');
+Route::get('/absentGroup/{group}','HomeController@absentGroup')->name('absentGroup');
+Route::get('/absentSingle/{single}','HomeController@absentSingle')->name('absentSingle');
 Route::get('/confirmGroup/{Group}','GroupController@confirm')->name('confirmGroup');
 Route::get('/confirmSingle/{Single}','SingleController@confirm')->name('confirmSingle');
+
+Route::get('/test',function(){
+    return view('email.schedule');
+});

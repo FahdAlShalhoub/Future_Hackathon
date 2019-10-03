@@ -143,4 +143,29 @@ class HomeController extends Controller
         $single->update(['groupID' => null, 'status' => 'rejected']);
         return redirect(route('pullGroupsOfSingles'));
     }
+
+    public function attendedGroup(Group $group){
+        $group->attended='yes';
+        $group->save();
+        return redirect(route('home'));
+    }
+
+    
+    public function absentGroup(Group $group){
+        $group->attended='no';
+        $group->save();
+        return redirect(route('home'));
+    }
+
+    public function attendedSingle(Single $single){
+        $single->attended='yes';
+        $single->save();
+        return redirect(route('pullSingles'));
+    }
+
+    public function absentSingle(Single $single){
+        $single->attended='no';
+        $single->save();
+        return redirect(route('pullSingles'));
+    }
 }

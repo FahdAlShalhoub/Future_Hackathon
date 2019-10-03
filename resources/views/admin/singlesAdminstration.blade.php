@@ -13,6 +13,7 @@
                                <th>Name</th>
                                <th>Status</th>
                                <th>Confirmed</th>
+                               <th>Attended</th>
                            </tr>
                        </thead>
                        <tbody>
@@ -22,6 +23,9 @@
                                 <td>{{$single->name}}</td>
                                 <td class="@if($single->status === 'rejected') text-danger  @elseif($single->status === 'accepted') text-success @endif">{{$single->status}}</td>
                                 <td class="@if($single->confirmed == 'yes') text-success @else text-danger @endif">{{$single->confirmed}}</td>
+                                <td class="@if($single->attended === 'yes') text-success @endif">{{$single->attended}}</td>
+                                <td><a class="btn btn-success" href="{{route('attendedSingle',$single->id)}}">Attend</a></td>
+                                <td><a class="btn btn-danger" href="{{route('absentSingle',$single->id)}}">Left</a></td>
                            </tr>
                            @endforeach
                        </tbody>
