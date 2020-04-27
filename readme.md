@@ -5,6 +5,6 @@ https://ftcksu.com/
 
 It contains the following features:
 
-1-Competitor Attendance Managment \s\s
-2-Registration System (With Mail Confirmation) \s\s
+1-Competitor Attendance Managment <br>
+2-Registration System (With Mail Confirmation) <br>
 3-Anouncement Page
